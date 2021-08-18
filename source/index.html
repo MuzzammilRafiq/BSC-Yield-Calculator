@@ -208,13 +208,13 @@ output.innerHTML = slider.value;
 
 slider.oninput = function() {
   output.innerHTML = this.value;
-  dai_reward.value = Math.round(((mnwl_hold.value*((this.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
-  dai_reward.value = Math.round(((mnwl_hold.value*((this.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
+  dai_reward.value = Math.ceil(((mnwl_hold.value*((this.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
+  dai_reward.value = Math.ceil(((mnwl_hold.value*((this.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
   
 }
 slider.onchange = function() {
   output.innerHTML = this.value;
-  dai_reward.value = Math.round(((mnwl_hold.value*((this.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
+  dai_reward.value = Math.ceil(((mnwl_hold.value*((this.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
   
 }
 function setTwoNumberDecimal() {
@@ -230,7 +230,7 @@ if (n<=9999)
 {
    document.getElementById("mnwl_holdings").value = "10000"; 
 }
-  dai_reward.value = Math.round(((mnwl_hold.value*((slider.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
+  dai_reward.value = Math.ceil(((mnwl_hold.value*((slider.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
   get_price(api_price);
 }
 
