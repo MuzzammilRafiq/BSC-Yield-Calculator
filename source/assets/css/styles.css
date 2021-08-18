@@ -191,7 +191,6 @@ figure.testimonial .peopl h3 {
 
 .slick-prev, .slick-next {
 	font-size: 0;
-	visibility: hidden!important;
 	line-height: 0;
 	position: absolute;
 	top: 40%;
@@ -228,14 +227,12 @@ figure.testimonial .peopl h3 {
 	visibility: hidden!important;
 }
 .slick-prev {
-	left: -40px;
 	visibility: hidden!important;
 }
 .slick-prev:before {
 	visibility: hidden!important;
 }
 .slick-next {
-	right: -40px;
 	visibility: hidden!important;
 }
 .slick-next:before {
