@@ -186,10 +186,12 @@ figure.testimonial .peopl h3 {
 }
 .slick-btn.slick-hidden {
 	display: none;
+	visibility: hidden!important;
 }
 
 .slick-prev, .slick-next {
 	font-size: 0;
+	visibility: hidden!important;
 	line-height: 0;
 	position: absolute;
 	top: 40%;
@@ -203,14 +205,17 @@ figure.testimonial .peopl h3 {
 	border: none;
 	outline: none;
 	background: transparent;
+	
 }
 .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
 	color: transparent;
 	outline: none;
 	background: transparent;
+	visibility: hidden!important;
 }
 .slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before {
 	opacity: 1;
+	visibility: hidden!important;
 }
 .slick-prev:before, .slick-next:before {
 	font-family: "FontAwesome";
@@ -220,18 +225,23 @@ figure.testimonial .peopl h3 {
 	color: white;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	visibility: hidden!important;
 }
 .slick-prev {
 	left: -40px;
+	visibility: hidden!important;
 }
 .slick-prev:before {
 	content: "";
+	visibility: hidden!important;
 }
 .slick-next {
 	right: -40px;
+	visibility: hidden!important;
 }
 .slick-next:before {
 	content: "";
+	visibility: hidden!important;
 }
 
 
