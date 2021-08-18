@@ -1,0 +1,302 @@
+<html lang="en">
+  <head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no"/>
+     <title>MoonWillionare Calculator</title>
+	 <link rel="shortcut icon" href="assets/imgs/willy_ico.ico" />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css" />
+     <link rel="stylesheet" href="assets/css/Navigation-Clean.css" />
+     <link rel="stylesheet" href="assets/css/styles.css" />
+     <link rel="stylesheet" href="assets/css/Testimonials.css" />
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	  <link href="https://fonts.googleapis.com/css?family=Lato|Patua+One&display=swap" rel="stylesheet">
+  </head>
+  <body >
+  <div class="willy-radial">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+    <div class="container">
+    
+	<img alt="Sushi" src="assets/imgs/logo.png" style="width: 5%;height: auto;"></img><a style="color: #bfbfbf;font-size: 1.7rem; padding-left: 10px;padding-right: 18px;" href="#">MoonWillionaire</a>
+    
+        <button class="navbar-toggler" data-bs-target="#navcol-1" data-bs-toggle="collapse">
+          <span class="visually-hidden"> Toggle navigation </span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navcol-1" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+             <li class="nav-item">
+               <a class="nav-link "href="https://swap.moonwilly.com"> Swap</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link "href="https://moonwilly.com"> Home</a>
+             </li>
+          </ul>
+        </div>
+    </div>    
+    </nav>
+	</div>
+    <section class="willy-radial contact-clean">
+	<div class="bg-img">
+      <form id="round-willy" class="willy-form" method="post">
+	      <div class="d-flex justify-content-center">
+            <div class="spinner-border" 
+                 role="status" id="loading">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+        <!-- table for showing data -->
+        <table  id="employees"></table>
+		
+         <label hidden class="form-label"> Price:</label>
+         <input hidden  style="color:#212529;" class="form-control" type="text" id="mnwl_price"/>
+		 <input hidden type="text" id="price_fetch" />
+		  <input hidden  type="text" id="supply_fetch" />
+         <label class="form-label">MNWL amount:</label>
+         <input style="color:#212529;" class="form-control" type="number" value="10000" min="10000" max="350000000" id="mnwl_holdings" step="500"  oninput="setTwoNumberDecimal();" onchange="setTwoNumberDecimal();"/>
+         <div class="mb-3"></div>
+         <label class="form-label">Hold for:</label>
+         <select style="border:1px transparent" class="moon-select form-select " id="mnwl_hold_period" onchange="setTwoNumberDecimal();">
+           <optgroup label="Select diamond hands period" >
+             <option value="7" selected> 1 week</option>
+             <option value="14"> 2 weeks</option>
+             <option value ="30"> 1 month</option>
+             <option value ="60"> 2 months</option>
+             <option value ="90"> 3 months</option>
+             <option value ="180"> 6 months</option>
+             <option value ="270"> 9 months</option>
+             <option value ="365"> 1 year</option> 
+           </optgroup>
+         </select>
+         <div class="mb-3"></div>
+		     <div class="slidecontainer">
+         <label class="form-label">Slide for hourly volume: $<span id="demo"></span></label>  
+  <span class="special_moon"><input  type="range" min="0" max="100000" value="0" class="slider" id="myRange">  </span>
+  <img style="float:left;" src="assets/imgs/moon.png" height="3.5%">
+
+</div>
+         <div class="mb-3"></div>
+         <label class="form-label">DAI Reward:</label>
+ <input  disabled class="special_dollar"  id="dai_reward" class="form-control" type="text"  />
+
+		 <div class="mb-3"></div>
+      </form>
+	</div>
+	
+	  </section>
+	  <section>
+<div class="items">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"><img src="assets/imgs/quote-left.png"></h4>
+            <div class="template-demo">
+                <p>Online reviews can make or break a customer's decision to make a purchase. Read about these customer review sites where your customers'</p>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-2"> <img class="profile-pic" src="assets/imgs/logo.png"> </div>
+                <div class="col-sm-10">
+                    <div class="profile">
+                        <h4 class="cust-name">@Undefined313</h4>
+                        <p class="cust-profession">Investor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"><img src="assets/imgs/quote-left.png"></h4>
+            <div class="template-demo">
+                <p>When you think of Apple you automatically think expensive if your anything like me. When purchasing this laptop I was skeptical on laptops i purchased.</p>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-2"> <img class="profile-pic" src="assets/imgs/logo.png"> </div>
+                <div class="col-sm-10">
+                    <div class="profile">
+                        <h4 class="cust-name">Tikoh Amin</h4>
+                        <p class="cust-profession
+">Salon Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"><img src="assets/imgs/quote-left.png"></h4>
+            <div class="template-demo">
+                <p>I’ve wanted a MacBook for a while now because of the build quality and the simplicity of the OS. I spend an average 6 hours a day using it for college and the battery still has a fair.</p>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-2"> <img class="profile-pic" src="assets/imgs/logo.png"> </div>
+                <div class="col-sm-10">
+                    <div class="profile">
+                        <h4 class="cust-name">Malachi Lensing</h4>
+                        <p class="cust-profession
+">Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"><img src="assets/imgs/quote-left.png"></h4>
+            <div class="template-demo">
+                <p>This MacBook has excellent processing speed. The screen is crystal clear and I really enjoy the touchbar. I set up the fingerprint reader.</p>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-2"> <img class="profile-pic" src="assets/imgs/logo.png"> </div>
+                <div class="col-sm-10">
+                    <div class="profile">
+                        <h4 class="cust-name">Christian Isla</h4>
+                        <p class="cust-profession
+">Android Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"><img src="assets/imgs/quote-left.png"></h4>
+            <div class="template-demo">
+                <p>For the last 10 years, I have owned an old Gateway laptop. Although it was amazing and lasted me, it was time for an upgrade. I own an Apple phone so I decided to look into a computer.</p>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-2"> <img class="profile-pic" src="assets/imgs/logo.png"> </div>
+                <div class="col-sm-10">
+                    <div class="profile">
+                        <h4 class="cust-name">Lori Charles</h4>
+                        <p class="cust-profession
+">Sales manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <script  src="assets/js/function.js"></script>
+<script>
+//function updateTextInput(val) {
+//          document.getElementById('textInput').value=val; 
+//        }
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+var dai_reward = document.getElementById("dai_reward");
+var mnwl_hold = document.getElementById("mnwl_holdings");
+var mnwl_price = document.getElementById("mnwl_price");
+var mnwl_hold_period = document.getElementById("mnwl_hold_period");
+var mnwl_supply = document.getElementById("supply_fetch");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  dai_reward.value = Math.round(((mnwl_hold.value*((this.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
+  dai_reward.value = Math.round(((mnwl_hold.value*((this.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
+  
+}
+slider.onchange = function() {
+  output.innerHTML = this.value;
+  dai_reward.value = Math.round(((mnwl_hold.value*((this.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
+  
+}
+function setTwoNumberDecimal() {
+   // this.value = parseFloat(this.value).toFixed(2);
+   
+n = document.getElementById("mnwl_holdings").value;
+//no empty holdings
+ if (n.trim() == "") {
+           document.getElementById("mnwl_holdings").value = "10000"; 
+        }
+//minimum hold 10k MNWL
+if (n<=9999)
+{
+   document.getElementById("mnwl_holdings").value = "10000"; 
+}
+  dai_reward.value = Math.round(((mnwl_hold.value*((slider.value*24*mnwl_hold_period.value)*(8/100))))/mnwl_supply.value);
+  get_price(api_price);
+}
+
+
+
+</script>
+<script>
+ const api_price = 
+      "https://api.pancakeswap.info/api/v2/tokens/0xd4d2abbef1b26458504e7027233d5e7f09ea476d";
+ const api_supply = "https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0xd4d2abbef1b26458504e7027233d5e7f09ea476d&apikey=GPSIGGUCD79AZ5XY7E5VBVJIKFBXDS19UZ";
+// Defining async function
+async function get_price(url) {
+    // Storing response
+    const response = await fetch(url);
+    // Storing data in form of JSON
+    var data_price = await response.json(); 
+var price = data_price['data']['price'];
+  //console.log(parseFloat(cx).toFixed(6));
+ price_got = parseFloat(price).toFixed(6);  
+    if (response) {
+        hideloader();
+    }
+    show_price(price_got);
+}
+async function get_supply(url) {
+    // Storing response
+    const response = await fetch(url);
+    // Storing data in form of JSON
+    var data_supply = await response.json();
+   //console.log(dataz);
+  var supply = data_supply['result'];
+  //console.log(parseFloat(cx).toFixed(6));
+ supply_got = supply.substring(0,9); 
+ //console.log(supply_got);
+    if (response) {
+        hideloader();
+    }
+    show_supply(supply_got);
+}
+
+// Calling that async function
+get_price(api_price);
+get_supply(api_supply);
+// Function to hide the loader
+function hideloader() {
+    document.getElementById('loading').style.display = 'none';
+}
+ function show_supply(varizimo) {
+  document.getElementById('supply_fetch').value = supply_got	;
+  }
+  function show_price(price) {
+  holdings_updt = document.getElementById('mnwl_holdings').value
+  mnwl_cost = (((holdings_updt * price_got)*16/100)+(holdings_updt*price_got))
+
+  document.getElementById('price_fetch').value = price_got;
+
+    let tab = 
+        `<tr>
+          <th style="background-color:#161522;color:yellow!important;padding-left:0px!important;" class="form-control"><b>Cost of holdings: $ ${parseFloat(mnwl_cost).toFixed(0)} </b></th>
+         </tr>`;
+    
+    // Loop to access all rows 
+ 
+        tab += `<tr> 
+   
+</tr><br>`;
+    
+    // Setting innerHTML as tab variable
+    document.getElementById("employees").innerHTML = tab;
+}              
+
+</script>
+  </body>
+</html>
