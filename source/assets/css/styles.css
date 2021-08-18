@@ -205,7 +205,7 @@ figure.testimonial .peopl h3 {
 	border: none;
 	outline: none;
 	background: transparent;
-	
+	visibility: hidden!important;
 }
 .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
 	color: transparent;
@@ -232,7 +232,6 @@ figure.testimonial .peopl h3 {
 	visibility: hidden!important;
 }
 .slick-prev:before {
-	content: "";
 	visibility: hidden!important;
 }
 .slick-next {
@@ -240,7 +239,6 @@ figure.testimonial .peopl h3 {
 	visibility: hidden!important;
 }
 .slick-next:before {
-	content: "";
 	visibility: hidden!important;
 }
 
