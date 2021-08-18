@@ -248,7 +248,7 @@ async function get_price(url) {
     // Storing data in form of JSON
     var data_price = await response.json(); 
 var price = data_price['data']['price'];
-  console.log(parseFloat(cx).toFixed(6));
+  //console.log(parseFloat(cx).toFixed(6));
  price_got = parseFloat(price).toFixed(6);  
     if (response) {
         hideloader();
@@ -264,7 +264,7 @@ async function get_supply(url) {
   var supply = data_supply['result'];
   //console.log(parseFloat(cx).toFixed(6));
  supply_got = supply.substring(0,9); 
- console.log(supply_got);
+ //console.log(supply_got);
     if (response) {
         hideloader();
     }
