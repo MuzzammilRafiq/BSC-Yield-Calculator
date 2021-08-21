@@ -261,7 +261,6 @@ async function get_volume(url) {
 
 	  
 	  const labels = [
-  'DBY-3',
   'DBY-2',
   'DBY-1',
   'DBY',
@@ -275,11 +274,11 @@ async function get_volume(url) {
 const data = {
   labels: labels,
   datasets: [{
-    label: 'Past 5 days - daily volume [$]',
+    label: 'Past 4 days - daily volume [$]',
 	backgroundColor: 'rgba(63,72,204)',
     //: 'rgb(0, 204, 102)',
     borderColor: 'rgb(13,4,21))',
-    data: [data_volume['total_volumes'][0][1], data_volume['total_volumes'][1][1], data_volume['total_volumes'][2][1], data_volume['total_volumes'][3][1], data_volume['total_volumes'][4][1]],
+    data: [data_volume['total_volumes'][1][1], data_volume['total_volumes'][2][1], data_volume['total_volumes'][3][1], data_volume['total_volumes'][4][1]],
   }]
 };
 const config = {
