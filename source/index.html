@@ -118,6 +118,8 @@
         <div class="card-body">
             <h4 class="card-title"><img src="assets/imgs/quote-left.png"></h4>
             <div class="template-demo">
+			    Current MNWL supply: <input style="color:#53144c;" type="text" id="supply_show_s" disabled>
+			<br>
                 Current MNWL dividend supply: <input style="color:#53144c;" type="text" id="supply_show_v" disabled>
 				<br>
 				 MNWL price: <input style="color:#53144c;" type="text" id="price_show_v" disabled>
@@ -246,8 +248,10 @@ if (n<=9999)
 <script>
  const api_price = 
       "https://api.pancakeswap.info/api/v2/tokens/0xd4d2abbef1b26458504e7027233d5e7f09ea476d";
- const api_supply = "https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x83a9282679389e3967f8834655ea89da144f684a&apikey=GPSIGGUCD79AZ5XY7E5VBVJIKFBXDS19UZ";
-const api_volume = "https://api.coingecko.com/api/v3/coins/moonwilly/market_chart?vs_currency=usd&days=6&interval=daily";
+ const api_supply = "https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0xd4d2abbef1b26458504e7027233d5e7f09ea476d&apikey=GPSIGGUCD79AZ5XY7E5VBVJIKFBXDS19UZ";
+ const api_dividend_supply = "https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x83a9282679389e3967f8834655ea89da144f684a&apikey=GPSIGGUCD79AZ5XY7E5VBVJIKFBXDS19UZ";
+
+ const api_volume = "https://api.coingecko.com/api/v3/coins/moonwilly/market_chart?vs_currency=usd&days=6&interval=daily";
 
 
 
@@ -328,6 +332,21 @@ var price = data_price['data']['price'];
     }
     show_price(price_got);
 }
+async function get_div_supply(url) {
+    // Storing response
+    const response = await fetch(url);
+    // Storing data in form of JSON
+    var data_supply = await response.json();
+   //console.log(dataz);
+  var supply = data_supply['result'];
+  //console.log(parseFloat(cx).toFixed(6));
+ supply_got = supply.substring(0,9); 
+ //console.log(supply_got);
+    if (response) {
+        hideloader();
+    }
+    show_dividend_supply(supply_got);
+}
 async function get_supply(url) {
     // Storing response
     const response = await fetch(url);
@@ -346,13 +365,17 @@ async function get_supply(url) {
 
 // Calling that async function
 get_price(api_price);
+get_div_supply(api_dividend_supply);
 get_supply(api_supply);
 get_volume(api_volume);
 // Function to hide the loader
 function hideloader() {
     document.getElementById('loading').style.display = 'none';
 }
- function show_supply(varizimo) {
+function show_supply(varizimo) {
+  document.getElementById('supply_show_s').value = supply_got;
+  }
+ function show_dividend_supply(varizimo) {
   document.getElementById('supply_fetch').value = supply_got;
   document.getElementById('supply_show_v').value = supply_got;
   }
