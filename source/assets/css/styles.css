@@ -8,7 +8,9 @@ max-width: 540px;
 max-height:300px;
 
 }
-
+.card-title {
+color:#2a2553!important;
+}
 
 .container {
 	box-sizing: content-box;
