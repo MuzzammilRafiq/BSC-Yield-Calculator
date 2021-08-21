@@ -7,7 +7,7 @@ dots: true,
 infinite: true,
 speed: 800,
 autoplay: true,
-autoplaySpeed: 7000,
+autoplaySpeed: 4000,
 slidesToShow: 3,
 slidesToScroll: 3,
 responsive: [

@@ -72,23 +72,27 @@
 			 <option value ="99999"> 99999 days</option> 
            </optgroup>
          </select>
-         <div class="mb-3"></div>
-		     <div class="slidecontainer">
-         <label class="form-label">Slide for hourly volume during  hodl: $<span id="demo"></span></label>  
-  <span class="special_moon"><input  type="range" min="0" max="1000000" value="0" class="slider" id="myRange">  </span>
-  <img style="float:left;" src="assets/imgs/moon.png" height="3.5%">
+			 <div class="mb-3"></div>
+				 <div class="slidecontainer">
+			 <label class="form-label">Slide for hourly volume during  hodl: $<span id="demo"></span></label>  
+	  <span class="special_moon"><input  type="range" min="0" max="1000000" value="0" class="slider" id="myRange">  </span>
+	  <img style="float:left;" src="assets/imgs/moon.png" height="3.5%">
 
-</div>
-         <div class="mb-3"></div>
-         <label class="form-label">Estimated DAI Reward:</label>
- <input  disabled class="special_dollar"  id="dai_reward" class="form-control" type="text"  />
-
-		 <div class="mb-3"></div>
-      </form>
 	</div>
-	
+			 <div class="mb-3"></div>
+			 <label class="form-label">Estimated DAI Reward:</label>
+	 <input  disabled class="special_dollar"  id="dai_reward" class="form-control" type="text"  />
+
+			 <div class="mb-3"></div>
+		  </form>
+		</div>
+		
 	  </section>
-  
+  <section></section>
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
 	  
 	  <section >
 <div class="items">
@@ -96,7 +100,7 @@
         <div class="card-body">
             <h4 class="card-title"><img src="assets/imgs/quote-left.png"></h4>
             <div class="template-demo">
-                <p>This tool was built for fun'</p>
+                <p>This tool was built for fun</p>
             </div>
             <hr>
             <div class="row">
@@ -193,6 +197,7 @@
 <script src='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
  <script  src="assets/js/function.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script>
 //function updateTextInput(val) {
 //          document.getElementById('textInput').value=val; 
@@ -241,6 +246,73 @@ if (n<=9999)
  const api_price = 
       "https://api.pancakeswap.info/api/v2/tokens/0xd4d2abbef1b26458504e7027233d5e7f09ea476d";
  const api_supply = "https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x83a9282679389e3967f8834655ea89da144f684a&apikey=GPSIGGUCD79AZ5XY7E5VBVJIKFBXDS19UZ";
+const api_volume = "https://api.coingecko.com/api/v3/coins/moonwilly/market_chart?vs_currency=usd&days=6&interval=daily";
+
+
+
+
+
+// Defining async function
+async function get_volume(url) {
+    // Storing response
+    const response = await fetch(url);
+    // Storing data in form of JSON
+    var data_volume = await response.json();
+
+	  
+	  const labels = [
+  'DBY-3',
+  'DBY-2',
+  'DBY-1',
+  'DBY',
+  'YDA',
+];
+
+//for (let k =0;k<=(data_volume['total_volumes']).length-1;k++)
+//	{
+//	  data_volume['total_volumes'][k][1];
+//	   };
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'Past 5 days - daily volume [$]',
+	backgroundColor: 'rgba(110,20,99,1)',
+    //: 'rgb(0, 204, 102)',
+    borderColor: 'rgb(13,4,21))',
+    data: [data_volume['total_volumes'][0][1], data_volume['total_volumes'][1][1], data_volume['total_volumes'][2][1], data_volume['total_volumes'][3][1], data_volume['total_volumes'][4][1]],
+  }]
+};
+const config = {
+  type: 'bar',
+  data: data,
+  options: {}
+};
+
+ // === include 'setup' then 'config' above ===
+
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+
+	  
+	
+    //var volume = data_volume['total_volumes'][k][1];
+  //console.log(parseFloat(cx).toFixed(6));
+    //console.log(volume);
+    if (response) {
+        hideloader();
+    }
+    //show_volume(price_got);
+}
+
+
+
+
+
+
+
 // Defining async function
 async function get_price(url) {
     // Storing response
@@ -274,6 +346,7 @@ async function get_supply(url) {
 // Calling that async function
 get_price(api_price);
 get_supply(api_supply);
+get_volume(api_volume);
 // Function to hide the loader
 function hideloader() {
     document.getElementById('loading').style.display = 'none';

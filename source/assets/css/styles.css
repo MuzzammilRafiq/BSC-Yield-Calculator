@@ -3,6 +3,13 @@
 /* Code By Webdevtrick ( https://webdevtrick.com ) */
 
 
+#myChart {
+max-width: 740px;
+max-height:300px;
+margin-left: auto; margin-right: auto;
+
+}
+
 
 .container {
 	box-sizing: content-box;
