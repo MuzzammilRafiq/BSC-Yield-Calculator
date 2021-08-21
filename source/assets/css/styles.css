@@ -4,9 +4,10 @@
 
 
 #myChart {
-max-width: 740px;
+max-width: 540px;
 max-height:300px;
-margin-left: auto; margin-right: auto;
+margin-left: auto;
+ margin-right: auto;
 
 }
 
