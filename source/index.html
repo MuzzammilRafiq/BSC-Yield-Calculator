@@ -265,14 +265,17 @@ async function get_volume(url) {
     const response = await fetch(url);
     // Storing data in form of JSON
     var data_volume = await response.json();
-
-	  
+    var yda = new Date(data_volume['total_volumes'][5][0]);
+    var dby = new Date(data_volume['total_volumes'][4][0]);
+	var dby_1 = new Date(data_volume['total_volumes'][3][0]);
+	var dby_2 = new Date(data_volume['total_volumes'][2][0]);
+	var dby_3 = new Date(data_volume['total_volumes'][1][0]); 
 	  const labels = [
-  'DBY-3',
-  'DBY-2',
-  'DBY-1',
-  'DBY',
-  'YDA',
+  dby_3.getDate(),
+  dby_2.getDate(),
+  dby_1.getDate(),
+  dby.getDate(),
+  yda.getDate(),
 ];
 
 //for (let k =0;k<=(data_volume['total_volumes']).length-1;k++)
